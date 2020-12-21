@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Class1
+    public class TeamLookup
     {
+        public int TeamId { get; set; }
+        public string TeamName { get; set; }
     }
 }

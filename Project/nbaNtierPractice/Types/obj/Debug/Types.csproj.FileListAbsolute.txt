@@ -1,0 +1,6 @@
+C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\Types\bin\Debug\Types.dll
+C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\Types\bin\Debug\Types.pdb
+C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\Types\obj\Debug\Types.csprojAssemblyReference.cache
+C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\Types\obj\Debug\Types.csproj.CoreCompileInputs.cache
+C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\Types\obj\Debug\Types.dll
+C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\Types\obj\Debug\Types.pdb

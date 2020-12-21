@@ -44,5 +44,15 @@
     <Compile Include="TeamService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{ad834545-8030-487b-8477-fc9d02bab897}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repo\Repo.csproj">
+      <Project>{c9250ebb-4cd1-4432-8cbd-6ec8672d3351}</Project>
+      <Name>Repo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

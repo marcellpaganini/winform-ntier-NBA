@@ -44,5 +44,19 @@
     <Compile Include="TeamRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{6504257c-2ec6-48b4-b0d9-03518894a888}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{ad834545-8030-487b-8477-fc9d02bab897}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Types\Types.csproj">
+      <Project>{4cb52816-c79c-4963-8646-e5113ff3df4a}</Project>
+      <Name>Types</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
