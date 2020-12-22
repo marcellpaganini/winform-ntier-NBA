@@ -11,9 +11,11 @@ namespace Model
         public int PlayerId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public bool Active { get; set; }
         public DateTime BirthDate { get; set; }
         public decimal Salary { get; set; }
         public string TeamName { get; set; }
+        public int? TeamId { get; set; }
         public string Arena { get; set; }
         public string Conference { get; set; }
     }

@@ -103,5 +103,76 @@ namespace Repo
 
             return false;
         }
+
+        public Player RetrieveById(int playerId)
+        {
+            List<ParmStruct> parms = new List<ParmStruct>();
+            parms.Add(new ParmStruct("@PlayerId", playerId, 0, SqlDbType.Int, ParameterDirection.Input));
+
+            DataTable dt = db.GetData("RetrievePlayerByPlayerId", parms);
+
+            return PopulatePlayerRecord(dt.Rows[0]);
+        }
+
+        private Player PopulatePlayerRecord(DataRow row)
+        {
+            Player p = new Player();
+
+            p.PlayerId = Convert.ToInt32(row["PlayerId"]);
+            p.FirstName = row["FirstName"].ToString();
+            p.LastName = row["LastName"].ToString();
+            p.Active = (bool)row["Active"];
+            p.BirthDate = Convert.ToDateTime(row["BirthDate"]);
+            p.Salary = Convert.ToDecimal(row["Salary"]);
+            if (row["TeamId"] == DBNull.Value)
+            {
+                p.TeamId = null;
+            }
+            else
+            {
+                p.TeamId = Convert.ToInt32(row["TeamId"]);
+            }
+
+            return p;
+        }
+
+        public bool Insert(Player p)
+        {
+            List<ParmStruct> parms = new List<ParmStruct>();
+
+            parms.Add(new ParmStruct("@FirstName", p.FirstName, 50, SqlDbType.VarChar, ParameterDirection.Input));
+            parms.Add(new ParmStruct("@LastName", p.LastName, 50, SqlDbType.VarChar, ParameterDirection.Input));
+            parms.Add(new ParmStruct("@Active", p.Active, 0, SqlDbType.Bit, ParameterDirection.Input));
+            parms.Add(new ParmStruct("@BirthDate", p.BirthDate, 0, SqlDbType.DateTime2, ParameterDirection.Input));
+            parms.Add(new ParmStruct("@Salary", p.Salary, 19, SqlDbType.Decimal, ParameterDirection.Input));
+            parms.Add(new ParmStruct("@TeamId", p.TeamId, 0, SqlDbType.Int, ParameterDirection.Input));
+
+            if (db.SendData("InsertPlayer", parms) > 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool Update(Player p)
+        {
+            List<ParmStruct> parms = new List<ParmStruct>();
+
+            parms.Add(new ParmStruct("@PlayerId", p.PlayerId, 0, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new ParmStruct("@FirstName", p.FirstName, 50, SqlDbType.VarChar, ParameterDirection.Input));
+            parms.Add(new ParmStruct("@LastName", p.LastName, 50, SqlDbType.VarChar, ParameterDirection.Input));
+            parms.Add(new ParmStruct("@Active", p.Active, 0, SqlDbType.Bit, ParameterDirection.Input));
+            parms.Add(new ParmStruct("@BirthDate", p.BirthDate, 0, SqlDbType.DateTime2, ParameterDirection.Input));
+            parms.Add(new ParmStruct("@Salary", p.Salary, 19, SqlDbType.Decimal, ParameterDirection.Input));
+            parms.Add(new ParmStruct("@TeamId", p.TeamId, 0, SqlDbType.Int, ParameterDirection.Input));
+
+            if (db.SendData("UpdatePlayer", parms) > 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

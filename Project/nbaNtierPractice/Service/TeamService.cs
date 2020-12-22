@@ -36,5 +36,22 @@ namespace Service
         {
             return repo.Delete(playerId);
         }
+
+        public Player GetPlayer(int playerId)
+        {
+            return repo.RetrieveById(playerId);
+        }
+
+        public bool AddPlayer(Player p)
+        {
+            // perform any logic that needs to be done before an employee gets inserted
+            
+                return repo.Insert(p);
+        }
+
+        public bool ModifyPlayer(Player p)
+        {
+                return repo.Update(p);
+        }
     }
 }
