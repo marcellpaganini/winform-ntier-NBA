@@ -120,10 +120,17 @@ namespace nbaNtierPractice
             try
             {
                 TeamService service = new TeamService();
+                Player p = PopulatePlayerObject();
 
-                if (!service.AddPlayer(PopulatePlayerObject()))
+
+                if (!service.AddPlayer(p))
                 {
-                    MessageBox.Show("Insert failed");
+                    string msg = "";
+                    foreach (ValidationError error in p.Errors)
+                    {
+                        msg += error.Description + Environment.NewLine;
+                    }
+                    MessageBox.Show(msg, "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -148,10 +155,16 @@ namespace nbaNtierPractice
                 }
 
                 TeamService service = new TeamService();
+                Player p = PopulatePlayerObjectUpdate();
 
-                if (!service.ModifyPlayer(PopulatePlayerObjectUpdate()))
+                if (!service.ModifyPlayer(p))
                 {
-                    MessageBox.Show("Update failed", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string msg = "";
+                    foreach(ValidationError error in p.Errors)
+                    {
+                        msg += error.Description + Environment.NewLine;
+                    }
+                    MessageBox.Show(msg, "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

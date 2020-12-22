@@ -132,6 +132,7 @@
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(244, 22);
             this.txtSalary.TabIndex = 10;
+            this.txtSalary.Text = "0";
             // 
             // dtpBirthDate
             // 

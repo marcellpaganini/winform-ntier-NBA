@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Service
 {
@@ -43,15 +44,36 @@ namespace Service
         }
 
         public bool AddPlayer(Player p)
-        {
-            // perform any logic that needs to be done before an employee gets inserted
-            
+        {            
+            if (Validate(p))
                 return repo.Insert(p);
+
+            return false;
         }
 
         public bool ModifyPlayer(Player p)
         {
+            if (Validate(p))
                 return repo.Update(p);
+
+            return false;
         }
+
+        #region Private Methods
+        private bool Validate(Player playerToValidate)
+        {
+            ValidationContext context = new ValidationContext(playerToValidate);
+            List<ValidationResult> results = new List<ValidationResult>();
+
+            Validator.TryValidateObject(playerToValidate, context, results, true);
+
+            foreach(ValidationResult p in results)
+            {
+                playerToValidate.AddError(new ValidationError(p.ErrorMessage));
+            }
+
+            return playerToValidate.Errors.Count == 0;
+        }
+        #endregion
     }
 }
