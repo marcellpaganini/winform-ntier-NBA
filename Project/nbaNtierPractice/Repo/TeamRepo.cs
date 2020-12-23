@@ -124,6 +124,7 @@ namespace Repo
             p.Active = (bool)row["Active"];
             p.BirthDate = Convert.ToDateTime(row["BirthDate"]);
             p.Salary = Convert.ToDecimal(row["Salary"]);
+            p.RecordVersion = (byte[])row["RecordVersion"];
             if (row["TeamId"] == DBNull.Value)
             {
                 p.TeamId = null;
@@ -163,6 +164,7 @@ namespace Repo
         {
             List<ParmStruct> parms = new List<ParmStruct>();
 
+            parms.Add(new ParmStruct("@RecordVersion", p.RecordVersion, 0, SqlDbType.Timestamp, ParameterDirection.InputOutput));
             parms.Add(new ParmStruct("@PlayerId", p.PlayerId, 0, SqlDbType.Int, ParameterDirection.Input));
             parms.Add(new ParmStruct("@FirstName", p.FirstName, 50, SqlDbType.VarChar, ParameterDirection.Input));
             parms.Add(new ParmStruct("@LastName", p.LastName, 50, SqlDbType.VarChar, ParameterDirection.Input));
@@ -173,6 +175,7 @@ namespace Repo
 
             if (db.SendData("UpdatePlayer", parms) > 0)
             {
+                p.RecordVersion = (byte[])parms.Where(pr => pr.Name == "@RecordVersion").FirstOrDefault().Value;
                 return true;
             }
 

@@ -47,5 +47,7 @@ namespace Model
         public string Arena { get; set; }
         
         public string Conference { get; set; }
+
+        public byte[] RecordVersion { get; set; }
     }
 }

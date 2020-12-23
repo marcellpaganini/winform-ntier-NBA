@@ -160,8 +160,7 @@ namespace nbaNtierPractice
 
                 TeamService service = new TeamService();
 
-                _plr = new Player();
-                _plr = PopulatePlayerObjectUpdate();
+                PopulatePlayerObjectUpdate();
 
                 if (service.ModifyPlayer(_plr))
                 {
@@ -246,9 +245,8 @@ namespace nbaNtierPractice
 
         }
 
-        public Player PopulatePlayerObjectUpdate()
+        public void PopulatePlayerObjectUpdate()
         {
-            Player p = new Player();
 
             if (cbxActive.Checked == true)
             {
@@ -259,15 +257,13 @@ namespace nbaNtierPractice
                 active = false;
             }
 
-            p.PlayerId = Convert.ToInt32(txtId.Text.Trim());
-            p.FirstName = txtName.Text.Trim();
-            p.LastName = txtLastName.Text.Trim();
-            p.Active = active;
-            p.BirthDate = dtpBirthDate.Value;
-            p.Salary = Convert.ToDecimal(txtSalary.Text.Trim());
-            p.TeamId = Convert.ToInt32(cboAllTeams.SelectedValue);
-
-            return p;
+            _plr.PlayerId = Convert.ToInt32(txtId.Text.Trim());
+            _plr.FirstName = txtName.Text.Trim();
+            _plr.LastName = txtLastName.Text.Trim();
+            _plr.Active = active;
+            _plr.BirthDate = dtpBirthDate.Value;
+            _plr.Salary = Convert.ToDecimal(txtSalary.Text.Trim());
+            _plr.TeamId = Convert.ToInt32(cboAllTeams.SelectedValue);
         }
 
         public void ResetForm()
