@@ -75,22 +75,29 @@ namespace nbaNtierPractice
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
-            {
-                int selectedRowIndex = dgvPlyers.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dgvPlyers.Rows[selectedRowIndex];
-                int playerId = Convert.ToInt32(selectedRow.Cells[0].Value);
-
-                if (MessageBox.Show("Are you sure you want to delete the current record?", "Warning",
-                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            { 
+                if(dgvPlyers.SelectedCells.Count == 0)
                 {
-                    return;
+                    MessageBox.Show("You must select a player first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                else
+                {
+                    int selectedRowIndex = dgvPlyers.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dgvPlyers.Rows[selectedRowIndex];
+                    int playerId = Convert.ToInt32(selectedRow.Cells[0].Value);
 
-                TeamService service = new TeamService();
-                service.Delete(playerId);
+                    if (MessageBox.Show("Are you sure you want to delete the current record?", "Warning",
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                        {
+                            return;
+                        }
 
-                int team = Convert.ToInt32(cboTeams.SelectedValue);
-                dgvPlyers.DataSource = service.GetPlayersByTeam(team);
+                    TeamService service = new TeamService();
+                    service.Delete(playerId);
+
+                    int team = Convert.ToInt32(cboTeams.SelectedValue);
+                    dgvPlyers.DataSource = service.GetPlayersByTeam(team);
+                }
             }
             catch (Exception ex)
             {
@@ -280,7 +287,7 @@ namespace nbaNtierPractice
             txtLastName.Text = "";
             cbxActive.Checked = false;
             dtpBirthDate.Value = DateTime.Today;
-            txtSalary.Text = "";
+            txtSalary.Text = "0";
             cboAllTeams.SelectedIndex = -1;
         }
 
