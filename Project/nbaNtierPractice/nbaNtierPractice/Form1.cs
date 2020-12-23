@@ -102,13 +102,20 @@ namespace nbaNtierPractice
         {
             try
             {
-                int playerId = Convert.ToInt32(txtId.Text);
+                if(txtId.Text == "")
+                {
+                    MessageBox.Show("You must insert an Id number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    int playerId = Convert.ToInt32(txtId.Text);
 
-                TeamService service = new TeamService();
+                    TeamService service = new TeamService();
 
-                _plr = service.GetPlayer(playerId);
+                    _plr = service.GetPlayer(playerId);
 
-                PopulateFormFields(_plr);
+                    PopulateFormFields(_plr);
+                }
             }
             catch (Exception ex)
             {
@@ -290,6 +297,24 @@ namespace nbaNtierPractice
             dgvPlyers.Columns[1].Visible = false;
             dgvPlyers.Columns[4].Visible = false;
             dgvPlyers.Columns[8].Visible = false;
+            dgvPlyers.Columns[11].Visible = false;
+
+            dgvPlyers.Columns[0].HeaderText = "Id";
+            dgvPlyers.Columns[2].HeaderText = "First Name";
+            dgvPlyers.Columns[3].HeaderText = "Last Name";
+            dgvPlyers.Columns[5].HeaderText = "Birth Date";
+            dgvPlyers.Columns[7].HeaderText = "Team";
+
+            foreach (DataGridViewColumn col in dgvPlyers.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
+        }
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
