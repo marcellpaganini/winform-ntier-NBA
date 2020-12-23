@@ -15,6 +15,7 @@ namespace nbaNtierPractice
 {
     public partial class Form1 : Form
     {
+        private Player _plr;
         bool active;
         public Form1()
         {
@@ -63,9 +64,7 @@ namespace nbaNtierPractice
                 int team = Convert.ToInt32(cboTeams.SelectedValue);
                 TeamService service = new TeamService();
                 dgvPlyers.DataSource = service.GetPlayersByTeam(team);
-                dgvPlyers.Columns[0].Visible = false;
-                dgvPlyers.Columns[3].Visible = false;
-                dgvPlyers.Columns[7].Visible = false;
+                DgvSetup();
             }
             catch (Exception ex)
             {
@@ -89,6 +88,9 @@ namespace nbaNtierPractice
 
                 TeamService service = new TeamService();
                 service.Delete(playerId);
+
+                int team = Convert.ToInt32(cboTeams.SelectedValue);
+                dgvPlyers.DataSource = service.GetPlayersByTeam(team);
             }
             catch (Exception ex)
             {
@@ -104,10 +106,9 @@ namespace nbaNtierPractice
 
                 TeamService service = new TeamService();
 
-                Player player = new Player();
-                player = service.GetPlayer(playerId);
+                _plr = service.GetPlayer(playerId);
 
-                PopulateFormFields(player);
+                PopulateFormFields(_plr);
             }
             catch (Exception ex)
             {
@@ -120,22 +121,25 @@ namespace nbaNtierPractice
             try
             {
                 TeamService service = new TeamService();
-                Player p = PopulatePlayerObject();
+
+                _plr = new Player();
+                PopulatePlayerObject();
 
 
-                if (!service.AddPlayer(p))
+                if (service.AddPlayer(_plr))
                 {
-                    string msg = "";
-                    foreach (ValidationError error in p.Errors)
-                    {
-                        msg += error.Description + Environment.NewLine;
-                    }
-                    MessageBox.Show(msg, "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Player inserted successfully." + Environment.NewLine +
+                                    $"Player Id: " + _plr.PlayerIdOut.ToString());
+                    ResetForm();
                 }
                 else
                 {
-                    MessageBox.Show("Player inserted successfully");
-                    ResetForm();
+                    string msg = "";
+                    foreach (ValidationError error in _plr.Errors)
+                    {
+                        msg += error.Description + Environment.NewLine;
+                    }
+                    MessageBox.Show(msg, "Insert failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -155,21 +159,23 @@ namespace nbaNtierPractice
                 }
 
                 TeamService service = new TeamService();
-                Player p = PopulatePlayerObjectUpdate();
 
-                if (!service.ModifyPlayer(p))
+                _plr = new Player();
+                _plr = PopulatePlayerObjectUpdate();
+
+                if (service.ModifyPlayer(_plr))
+                {
+                    MessageBox.Show("Player updated successfully");
+                    ResetForm();
+                }
+                else
                 {
                     string msg = "";
-                    foreach(ValidationError error in p.Errors)
+                    foreach (ValidationError error in _plr.Errors)
                     {
                         msg += error.Description + Environment.NewLine;
                     }
                     MessageBox.Show(msg, "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show("Player updated successfully");
-                    ResetForm();
                 }
             }
             catch (Exception ex)
@@ -219,9 +225,8 @@ namespace nbaNtierPractice
             
         }
 
-        public Player PopulatePlayerObject()
+        public void PopulatePlayerObject()
         {
-            Player p = new Player();
 
             if (cbxActive.Checked == true)
             {
@@ -232,14 +237,13 @@ namespace nbaNtierPractice
                 active = false;
             }
 
-            p.FirstName = txtName.Text.Trim();
-            p.LastName = txtLastName.Text.Trim();
-            p.Active = active;
-            p.BirthDate = dtpBirthDate.Value;
-            p.Salary = Convert.ToDecimal(txtSalary.Text.Trim());
-            p.TeamId = Convert.ToInt32(cboAllTeams.SelectedValue);
+            _plr.FirstName = txtName.Text.Trim();
+            _plr.LastName = txtLastName.Text.Trim();
+            _plr.Active = active;
+            _plr.BirthDate = dtpBirthDate.Value;
+            _plr.Salary = Convert.ToDecimal(txtSalary.Text.Trim());
+            _plr.TeamId = Convert.ToInt32(cboAllTeams.SelectedValue);
 
-            return p;
         }
 
         public Player PopulatePlayerObjectUpdate()
@@ -275,6 +279,21 @@ namespace nbaNtierPractice
             dtpBirthDate.Value = DateTime.Today;
             txtSalary.Text = "";
             cboAllTeams.SelectedIndex = -1;
+        }
+
+        public void DgvSetup()
+        {
+            dgvPlyers.Columns[0].Width = 60;
+            dgvPlyers.Columns[2].Width = 90;
+            dgvPlyers.Columns[3].Width = 90;
+            dgvPlyers.Columns[6].Width = 80;
+            dgvPlyers.Columns[10].Width = 80;
+
+            dgvPlyers.Columns[6].DefaultCellStyle.Format = "c";
+
+            dgvPlyers.Columns[1].Visible = false;
+            dgvPlyers.Columns[4].Visible = false;
+            dgvPlyers.Columns[8].Visible = false;
         }
     }
 }

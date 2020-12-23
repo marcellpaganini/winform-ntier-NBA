@@ -17,7 +17,10 @@ namespace Model
         }
 
         public int PlayerId { get; set; }
-        
+
+        public int PlayerIdOut { get; set; }
+
+
         [Required(ErrorMessage = "First name is required.")]
         [StringLength(50, ErrorMessage = "First name must be between 1 to 50 characters.")]
         public string FirstName { get; set; }

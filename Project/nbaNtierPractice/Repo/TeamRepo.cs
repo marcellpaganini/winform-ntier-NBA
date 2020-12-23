@@ -140,6 +140,7 @@ namespace Repo
         {
             List<ParmStruct> parms = new List<ParmStruct>();
 
+            parms.Add(new ParmStruct("@PlayerIdOut", 0, 0, SqlDbType.Int, ParameterDirection.Output));
             parms.Add(new ParmStruct("@FirstName", p.FirstName, 50, SqlDbType.VarChar, ParameterDirection.Input));
             parms.Add(new ParmStruct("@LastName", p.LastName, 50, SqlDbType.VarChar, ParameterDirection.Input));
             parms.Add(new ParmStruct("@Active", p.Active, 0, SqlDbType.Bit, ParameterDirection.Input));
@@ -149,10 +150,13 @@ namespace Repo
 
             if (db.SendData("InsertPlayer", parms) > 0)
             {
+                p.PlayerIdOut = Convert.ToInt32(parms[0].Value);
+                return true;
+            }
+            else
+            {
                 return false;
             }
-
-            return true;
         }
 
         public bool Update(Player p)
@@ -169,10 +173,10 @@ namespace Repo
 
             if (db.SendData("UpdatePlayer", parms) > 0)
             {
-                return false;
+                return true;
             }
 
-            return true;
+            return false;
         }
     }
 }

@@ -14,7 +14,6 @@ CREATE OR ALTER PROCEDURE [dbo].[UpdatePlayer]
 AS
 BEGIN
 
-SET NOCOUNT ON;
 
 UPDATE Player SET
 			FirstName = @FirstName,

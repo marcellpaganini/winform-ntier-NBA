@@ -46,9 +46,13 @@ namespace Service
         public bool AddPlayer(Player p)
         {            
             if (Validate(p))
+            {
                 return repo.Insert(p);
-
-            return false;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public bool ModifyPlayer(Player p)
