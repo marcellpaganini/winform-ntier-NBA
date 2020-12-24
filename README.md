@@ -7,7 +7,7 @@ User will also be able to see a specific player by Id, update, and insert a new 
 
 Content practiced: N-Tier architecture, input/output/inputOutput parameters, data annotations, concurrency, sql stored procedures.
 
-Contains:
+Content:
 
 *SQL*
 Sript to create the nba database.
