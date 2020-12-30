@@ -93,5 +93,37 @@
       <Name>Types</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="01celtics60.jpg" />
+    <Content Include="02nets.jpg" />
+    <Content Include="03knicks.jpg" />
+    <Content Include="0476ers.png" />
+    <Content Include="05raptors.jpg" />
+    <Content Include="06bulls.jpg" />
+    <Content Include="07cavaliers.jpg" />
+    <Content Include="08pistons.png" />
+    <Content Include="09pacers.jpeg" />
+    <Content Include="10bucks.jpg" />
+    <Content Include="11hawks.jpg" />
+    <Content Include="12hornets.png" />
+    <Content Include="13heat.png" />
+    <Content Include="14magic.jpg" />
+    <Content Include="15wizards.png" />
+    <Content Include="16nuggets.jpg" />
+    <Content Include="17timberwolves.jpg" />
+    <Content Include="18thunder.jpg" />
+    <Content Include="19blazers.jpg" />
+    <Content Include="20jazz.jpg" />
+    <Content Include="21warriors.jpg" />
+    <Content Include="22clippers.png" />
+    <Content Include="23lakers.jpg" />
+    <Content Include="24suns.jpg" />
+    <Content Include="25kings.jpg" />
+    <Content Include="26mavericks.jpg" />
+    <Content Include="27rockets.png" />
+    <Content Include="28grizzlies.jpg" />
+    <Content Include="29pelicans.jpg" />
+    <Content Include="30spurs.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
