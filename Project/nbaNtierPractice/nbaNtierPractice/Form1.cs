@@ -197,6 +197,29 @@ namespace nbaNtierPractice
             }
         }
 
+        private void cboTeams_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pictureChange();
+        }
+
+        private void dgvPlyers_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int selectedRowIndex = dgvPlyers.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dgvPlyers.Rows[selectedRowIndex];
+            int playerId = Convert.ToInt32(selectedRow.Cells[0].Value);
+
+            TeamService service = new TeamService();
+
+            _plr = service.GetPlayer(playerId);
+
+            PopulateFormFields(_plr);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ResetForm();
+        }
+
         private void LoadTeams()
         {
             TeamService service = new TeamService();
@@ -327,123 +350,101 @@ namespace nbaNtierPractice
         private void pictureChange()
         {
             int value = Convert.ToInt32(cboTeams.SelectedValue);
-
+            string path = "C:\\Users\\pagan\\Documents\\NBCC\\Senior_Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\";
             switch (value)
             {
                 case 1:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\01celtics60.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}01celtics60.jpg");
                     break;
                 case 2:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\02nets.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}02nets.jpg");
                     break;
                 case 3:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\03knicks.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}03knicks.jpg");
                     break;
                 case 4:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\0476ers.png");
+                    pbxEmblem.Image = Image.FromFile($"{path}0476ers.png");
                     break;
                 case 5:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\05raptors.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}05raptors.jpg");
                     break;
                 case 6:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\06bulls.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}06bulls.jpg");
                     break;
                 case 7:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\07cavaliers.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}07cavaliers.jpg");
                     break;
                 case 8:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\08pistons.png");
+                    pbxEmblem.Image = Image.FromFile($"{path}08pistons.png");
                     break;
                 case 9:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\09pacers.jpeg");
+                    pbxEmblem.Image = Image.FromFile($"{path}09pacers.jpeg");
                     break;
                 case 10:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\10bucks.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}10bucks.jpg");
                     break;
                 case 11:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\11hawks.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}11hawks.jpg");
                     break;
                 case 12:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\12hornets.png");
+                    pbxEmblem.Image = Image.FromFile($"{path}12hornets.png");
                     break;
                 case 13:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\13heat.png");
+                    pbxEmblem.Image = Image.FromFile($"{path}13heat.png");
                     break;
                 case 14:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\14magic.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}14magic.jpg");
                     break;
                 case 15:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\15wizards.png");
+                    pbxEmblem.Image = Image.FromFile($"{path}15wizards.png");
                     break;
                 case 16:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\16nuggets.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}16nuggets.jpg");
                     break;
                 case 17:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\17timberwolves.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}17timberwolves.jpg");
                     break;
                 case 18:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\18thunder.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}18thunder.jpg");
                     break;
                 case 19:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\19blazers.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}19blazers.jpg");
                     break;
                 case 20:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\20jazz.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}20jazz.jpg");
                     break;
                 case 21:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\21warriors.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}21warriors.jpg");
                     break;
                 case 22:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\22clippers.png");
+                    pbxEmblem.Image = Image.FromFile($"{path}22clippers.png");
                     break;
                 case 23:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\23lakers.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}23lakers.jpg");
                     break;
                 case 24:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\24suns.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}24suns.jpg");
                     break;
                 case 25:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\25kings.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}25kings.jpg");
                     break;
                 case 26:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\26mavericks.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}26mavericks.jpg");
                     break;
                 case 27:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\27rockets.png");
+                    pbxEmblem.Image = Image.FromFile($"{path}27rockets.png");
                     break;
                 case 28:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\28grizzlies.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}28grizzlies.jpg");
                     break;
                 case 29:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\29pelicans.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}29pelicans.jpg");
                     break;
                 case 30:
-                    pbxEmblem.Image = Image.FromFile("C:\\Users\\pagan\\Documents\\NBCC\\Senior Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\30spurs.jpg");
+                    pbxEmblem.Image = Image.FromFile($"{path}30spurs.jpg");
                     break;
             }
         }
 
-        private void cboTeams_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            pictureChange();
-        }
-
-        private void dgvPlyers_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int selectedRowIndex = dgvPlyers.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = dgvPlyers.Rows[selectedRowIndex];
-            int playerId = Convert.ToInt32(selectedRow.Cells[0].Value);
-
-            TeamService service = new TeamService();
-
-            _plr = service.GetPlayer(playerId);
-
-            PopulateFormFields(_plr);
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            ResetForm();
-        }
     }
 }

@@ -19,3 +19,24 @@ C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Proj
 C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\bin\Debug\Repo.pdb
 C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\bin\Debug\DAL.pdb
 C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\obj\Debug\nbaNtierPractice.csproj.CopyComplete
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\bin\Debug\nbaNtierPractice.exe.config
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\bin\Debug\nbaNtierPractice.exe
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\bin\Debug\nbaNtierPractice.pdb
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\bin\Debug\Model.dll
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\bin\Debug\Service.dll
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\bin\Debug\Types.dll
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\bin\Debug\Repo.dll
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\bin\Debug\DAL.dll
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\bin\Debug\Model.pdb
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\bin\Debug\Service.pdb
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\bin\Debug\Types.pdb
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\bin\Debug\Repo.pdb
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\bin\Debug\DAL.pdb
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\obj\Debug\nbaNtierPractice.csprojAssemblyReference.cache
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\obj\Debug\nbaNtierPractice.Form1.resources
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\obj\Debug\nbaNtierPractice.Properties.Resources.resources
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\obj\Debug\nbaNtierPractice.csproj.GenerateResource.cache
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\obj\Debug\nbaNtierPractice.csproj.CoreCompileInputs.cache
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\obj\Debug\nbaNtierPractice.csproj.CopyComplete
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\obj\Debug\nbaNtierPractice.exe
+C:\Users\pagan\Documents\NBCC\Senior_Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\nbaNtierPractice\obj\Debug\nbaNtierPractice.pdb
