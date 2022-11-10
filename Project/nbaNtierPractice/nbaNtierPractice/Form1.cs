@@ -233,7 +233,7 @@ namespace nbaNtierPractice
 
         private void PopulateFormFields(Player p)
         {
-            if (p.Active == true)
+            if (p.Active)
             {
                 cbxActive.Checked = true;
                 active = true;
@@ -263,15 +263,7 @@ namespace nbaNtierPractice
 
         public void PopulatePlayerObject()
         {
-
-            if (cbxActive.Checked == true)
-            {
-                active = true;
-            }
-            else
-            {
-                active = false;
-            }
+            active = cbxActive.Checked ? active = true : false;
 
             _plr.FirstName = txtName.Text.Trim();
             _plr.LastName = txtLastName.Text.Trim();
@@ -284,15 +276,7 @@ namespace nbaNtierPractice
 
         public void PopulatePlayerObjectUpdate()
         {
-
-            if (cbxActive.Checked == true)
-            {
-                active = true;
-            }
-            else
-            {
-                active = false;
-            }
+            active = cbxActive.Checked ? active = true : false;
 
             _plr.PlayerId = Convert.ToInt32(txtId.Text.Trim());
             _plr.FirstName = txtName.Text.Trim();
@@ -350,98 +334,98 @@ namespace nbaNtierPractice
         private void pictureChange()
         {
             int value = Convert.ToInt32(cboTeams.SelectedValue);
-            string path = "C:\\Users\\pagan\\Documents\\NBCC\\Senior_Year\\Fall Term\\N-tier Dev\\nba\\nTierNBA\\Project\\nbaNtierPractice\\nbaNtierPractice\\";
+
             switch (value)
             {
                 case 1:
-                    pbxEmblem.Image = Image.FromFile($"{path}01celtics60.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\01celtics60.jpg");
                     break;
                 case 2:
-                    pbxEmblem.Image = Image.FromFile($"{path}02nets.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\02nets.jpg");
                     break;
                 case 3:
-                    pbxEmblem.Image = Image.FromFile($"{path}03knicks.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\03knicks.jpg");
                     break;
                 case 4:
-                    pbxEmblem.Image = Image.FromFile($"{path}0476ers.png");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\0476ers.png");
                     break;
                 case 5:
-                    pbxEmblem.Image = Image.FromFile($"{path}05raptors.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\05raptors.jpg");
                     break;
                 case 6:
-                    pbxEmblem.Image = Image.FromFile($"{path}06bulls.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\06bulls.jpg");
                     break;
                 case 7:
-                    pbxEmblem.Image = Image.FromFile($"{path}07cavaliers.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\07cavaliers.jpg");
                     break;
                 case 8:
-                    pbxEmblem.Image = Image.FromFile($"{path}08pistons.png");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\08pistons.png");
                     break;
                 case 9:
-                    pbxEmblem.Image = Image.FromFile($"{path}09pacers.jpeg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\09pacers.jpeg");
                     break;
                 case 10:
-                    pbxEmblem.Image = Image.FromFile($"{path}10bucks.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\10bucks.jpg");
                     break;
                 case 11:
-                    pbxEmblem.Image = Image.FromFile($"{path}11hawks.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\11hawks.jpg");
                     break;
                 case 12:
-                    pbxEmblem.Image = Image.FromFile($"{path}12hornets.png");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\12hornets.png");
                     break;
                 case 13:
-                    pbxEmblem.Image = Image.FromFile($"{path}13heat.png");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\13heat.png");
                     break;
                 case 14:
-                    pbxEmblem.Image = Image.FromFile($"{path}14magic.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\14magic.jpg");
                     break;
                 case 15:
-                    pbxEmblem.Image = Image.FromFile($"{path}15wizards.png");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\15wizards.png");
                     break;
                 case 16:
-                    pbxEmblem.Image = Image.FromFile($"{path}16nuggets.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\16nuggets.jpg");
                     break;
                 case 17:
-                    pbxEmblem.Image = Image.FromFile($"{path}17timberwolves.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\17timberwolves.jpg");
                     break;
                 case 18:
-                    pbxEmblem.Image = Image.FromFile($"{path}18thunder.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\18thunder.jpg");
                     break;
                 case 19:
-                    pbxEmblem.Image = Image.FromFile($"{path}19blazers.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\19blazers.jpg");
                     break;
                 case 20:
-                    pbxEmblem.Image = Image.FromFile($"{path}20jazz.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\20jazz.jpg");
                     break;
                 case 21:
-                    pbxEmblem.Image = Image.FromFile($"{path}21warriors.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\21warriors.jpg");
                     break;
                 case 22:
-                    pbxEmblem.Image = Image.FromFile($"{path}22clippers.png");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\22clippers.png");
                     break;
                 case 23:
-                    pbxEmblem.Image = Image.FromFile($"{path}23lakers.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\23lakers.jpg");
                     break;
                 case 24:
-                    pbxEmblem.Image = Image.FromFile($"{path}24suns.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\24suns.jpg");
                     break;
                 case 25:
-                    pbxEmblem.Image = Image.FromFile($"{path}25kings.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\25kings.jpg");
                     break;
                 case 26:
-                    pbxEmblem.Image = Image.FromFile($"{path}26mavericks.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\26mavericks.jpg");
                     break;
                 case 27:
-                    pbxEmblem.Image = Image.FromFile($"{path}27rockets.png");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\27rockets.png");
                     break;
                 case 28:
-                    pbxEmblem.Image = Image.FromFile($"{path}28grizzlies.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\28grizzlies.jpg");
                     break;
                 case 29:
-                    pbxEmblem.Image = Image.FromFile($"{path}29pelicans.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\29pelicans.jpg");
                     break;
                 case 30:
-                    pbxEmblem.Image = Image.FromFile($"{path}30spurs.jpg");
+                    pbxEmblem.Image = Image.FromFile(@".\imgs\30spurs.jpg");
                     break;
             }
         }

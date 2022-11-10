@@ -4,3 +4,9 @@ C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Proj
 C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\Model\obj\Debug\Model.dll
 C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\Model\obj\Debug\Model.pdb
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Model\bin\Debug\Model.dll
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Model\bin\Debug\Model.pdb
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Model\obj\Debug\Model.csproj.AssemblyReference.cache
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Model\obj\Debug\Model.dll
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Model\obj\Debug\Model.pdb

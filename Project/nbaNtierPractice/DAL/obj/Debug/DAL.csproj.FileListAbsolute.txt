@@ -7,3 +7,12 @@ C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Proj
 C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\DAL\obj\Debug\DAL.dll
 C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\DAL\obj\Debug\DAL.pdb
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\DAL\bin\Debug\DAL.dll
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\DAL\bin\Debug\DAL.pdb
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\DAL\bin\Debug\Types.dll
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\DAL\bin\Debug\Types.pdb
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\DAL\obj\Debug\DAL.dll
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\DAL\obj\Debug\DAL.pdb

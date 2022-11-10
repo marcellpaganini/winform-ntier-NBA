@@ -11,3 +11,16 @@ C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Proj
 C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\Repo\obj\Debug\Repo.csproj.CopyComplete
 C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\Repo\obj\Debug\Repo.dll
 C:\Users\pagan\Documents\NBCC\Senior Year\Fall Term\N-tier Dev\nba\nTierNBA\Project\nbaNtierPractice\Repo\obj\Debug\Repo.pdb
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Repo\bin\Debug\Repo.dll
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Repo\bin\Debug\Repo.pdb
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Repo\bin\Debug\DAL.dll
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Repo\bin\Debug\Model.dll
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Repo\bin\Debug\Types.dll
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Repo\bin\Debug\DAL.pdb
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Repo\bin\Debug\Model.pdb
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Repo\bin\Debug\Types.pdb
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Repo\obj\Debug\Repo.csproj.AssemblyReference.cache
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Repo\obj\Debug\Repo.csproj.CoreCompileInputs.cache
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Repo\obj\Debug\Repo.csproj.CopyComplete
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Repo\obj\Debug\Repo.dll
+C:\src\C#\nTierNBA\Project\nbaNtierPractice\Repo\obj\Debug\Repo.pdb
