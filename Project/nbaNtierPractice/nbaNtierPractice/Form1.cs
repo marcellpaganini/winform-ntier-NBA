@@ -1,4 +1,5 @@
 ﻿using Model;
+using nbaNtierPractice.imgs;
 using Service;
 using System;
 using System.Collections.Generic;
@@ -199,7 +200,7 @@ namespace nbaNtierPractice
 
         private void cboTeams_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pictureChange();
+            ImageManagement.PicChange(cboTeams, pbxEmblem);
         }
 
         private void dgvPlyers_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -233,16 +234,7 @@ namespace nbaNtierPractice
 
         private void PopulateFormFields(Player p)
         {
-            if (p.Active)
-            {
-                cbxActive.Checked = true;
-                active = true;
-            }
-            else
-            {
-                cbxActive.Checked = false;
-                active = false;
-            }
+            cbxActive.Checked = active = p.Active;
 
             txtId.Text = p.PlayerId.ToString();
             txtName.Text = p.FirstName.ToString();
@@ -250,6 +242,7 @@ namespace nbaNtierPractice
             active = p.Active;
             dtpBirthDate.Value = p.BirthDate;
             txtSalary.Text = p.Salary.ToString();
+
             if (p.TeamId == null)
             {
                 cboAllTeams.SelectedIndex = -1;
@@ -329,105 +322,6 @@ namespace nbaNtierPractice
         private void picClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void pictureChange()
-        {
-            int value = Convert.ToInt32(cboTeams.SelectedValue);
-
-            switch (value)
-            {
-                case 1:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\01celtics60.jpg");
-                    break;
-                case 2:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\02nets.jpg");
-                    break;
-                case 3:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\03knicks.jpg");
-                    break;
-                case 4:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\0476ers.png");
-                    break;
-                case 5:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\05raptors.jpg");
-                    break;
-                case 6:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\06bulls.jpg");
-                    break;
-                case 7:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\07cavaliers.jpg");
-                    break;
-                case 8:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\08pistons.png");
-                    break;
-                case 9:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\09pacers.jpeg");
-                    break;
-                case 10:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\10bucks.jpg");
-                    break;
-                case 11:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\11hawks.jpg");
-                    break;
-                case 12:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\12hornets.png");
-                    break;
-                case 13:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\13heat.png");
-                    break;
-                case 14:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\14magic.jpg");
-                    break;
-                case 15:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\15wizards.png");
-                    break;
-                case 16:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\16nuggets.jpg");
-                    break;
-                case 17:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\17timberwolves.jpg");
-                    break;
-                case 18:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\18thunder.jpg");
-                    break;
-                case 19:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\19blazers.jpg");
-                    break;
-                case 20:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\20jazz.jpg");
-                    break;
-                case 21:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\21warriors.jpg");
-                    break;
-                case 22:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\22clippers.png");
-                    break;
-                case 23:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\23lakers.jpg");
-                    break;
-                case 24:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\24suns.jpg");
-                    break;
-                case 25:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\25kings.jpg");
-                    break;
-                case 26:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\26mavericks.jpg");
-                    break;
-                case 27:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\27rockets.png");
-                    break;
-                case 28:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\28grizzlies.jpg");
-                    break;
-                case 29:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\29pelicans.jpg");
-                    break;
-                case 30:
-                    pbxEmblem.Image = Image.FromFile(@".\imgs\30spurs.jpg");
-                    break;
-            }
         }
 
     }
