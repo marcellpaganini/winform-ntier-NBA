@@ -4,8 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Types;
 
 namespace Repo
@@ -61,19 +59,19 @@ namespace Repo
             return teams;
         }
 
-        public List<Player> RetrieveSearchByTeamId(int teamId)
+        public List<PlayerDTO> RetrieveSearchByTeamId(int teamId)
         {
             List<ParmStruct> parms = new List<ParmStruct>();
             parms.Add(new ParmStruct("@teamId", teamId, 0, SqlDbType.Int, ParameterDirection.Input));
 
             DataTable dt = db.GetData("RetrievePlayerByTeamId", parms);
 
-            List<Player> players = new List<Player>();
+            List<PlayerDTO> players = new List<PlayerDTO>();
 
             foreach (DataRow row in dt.Rows)
             {
                 players.Add(
-                    new Player
+                    new PlayerDTO
                     {
                         PlayerId = Convert.ToInt32(row["PlayerId"]),
                         FirstName = row["FirstName"].ToString(),

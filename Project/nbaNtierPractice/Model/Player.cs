@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 namespace Model
@@ -40,13 +37,7 @@ namespace Model
         [Range(100000, 50000000, ErrorMessage = "Salary must be between $100.000,00 to $50.000.000,00.")]
         public decimal Salary { get; set; }
         
-        public string TeamName { get; set; }
-        
         public int? TeamId { get; set; }
-        
-        public string Arena { get; set; }
-        
-        public string Conference { get; set; }
 
         public byte[] RecordVersion { get; set; }
     }

@@ -1,10 +1,6 @@
 ﻿using Model;
 using Repo;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 namespace Service
@@ -28,7 +24,7 @@ namespace Service
             return repo.RetrieveTeamsByDivision(division);
         }
 
-        public List<Player> GetPlayersByTeam(int teamId)
+        public List<PlayerDTO> GetPlayersByTeam(int teamId)
         {
             return repo.RetrieveSearchByTeamId(teamId);
         }

@@ -3,12 +3,6 @@ using nbaNtierPractice.imgs;
 using Service;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Types;
 
@@ -22,6 +16,8 @@ namespace nbaNtierPractice
         {
             InitializeComponent();
         }
+
+        #region Form Methods
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -76,8 +72,8 @@ namespace nbaNtierPractice
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
-            { 
-                if(dgvPlyers.SelectedCells.Count == 0)
+            {
+                if (dgvPlyers.SelectedCells.Count == 0)
                 {
                     MessageBox.Show("You must select a player first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -89,9 +85,9 @@ namespace nbaNtierPractice
 
                     if (MessageBox.Show("Are you sure you want to delete the current record?", "Warning",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                        {
-                            return;
-                        }
+                    {
+                        return;
+                    }
 
                     TeamService service = new TeamService();
                     service.Delete(playerId);
@@ -110,7 +106,7 @@ namespace nbaNtierPractice
         {
             try
             {
-                if(txtId.Text == "")
+                if (txtId.Text == "")
                 {
                     MessageBox.Show("You must insert an Id number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -221,6 +217,15 @@ namespace nbaNtierPractice
             ResetForm();
         }
 
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        #endregion
+
+        #region Helper Methods
+
         private void LoadTeams()
         {
             TeamService service = new TeamService();
@@ -251,7 +256,7 @@ namespace nbaNtierPractice
             {
                 cboAllTeams.SelectedValue = p.TeamId;
             }
-            
+
         }
 
         public void PopulatePlayerObject()
@@ -294,35 +299,26 @@ namespace nbaNtierPractice
         public void DgvSetup()
         {
             dgvPlyers.Columns[0].Width = 60;
+            dgvPlyers.Columns[1].Width = 90;
             dgvPlyers.Columns[2].Width = 90;
-            dgvPlyers.Columns[3].Width = 90;
-            dgvPlyers.Columns[6].Width = 80;
-            dgvPlyers.Columns[10].Width = 80;
+            dgvPlyers.Columns[3].Width = 80;
+            dgvPlyers.Columns[6].Width = 90;
 
-            dgvPlyers.Columns[6].DefaultCellStyle.Format = "c";
-
-            dgvPlyers.Columns[1].Visible = false;
-            dgvPlyers.Columns[4].Visible = false;
-            dgvPlyers.Columns[8].Visible = false;
-            dgvPlyers.Columns[11].Visible = false;
+            dgvPlyers.Columns[4].DefaultCellStyle.Format = "c";
 
             dgvPlyers.Columns[0].HeaderText = "Id";
-            dgvPlyers.Columns[2].HeaderText = "First Name";
-            dgvPlyers.Columns[3].HeaderText = "Last Name";
-            dgvPlyers.Columns[5].HeaderText = "Birth Date";
-            dgvPlyers.Columns[7].HeaderText = "Team";
+            dgvPlyers.Columns[1].HeaderText = "First Name";
+            dgvPlyers.Columns[2].HeaderText = "Last Name";
+            dgvPlyers.Columns[3].HeaderText = "Birth Date";
+            dgvPlyers.Columns[5].HeaderText = "Team";
 
             foreach (DataGridViewColumn col in dgvPlyers.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
-
         }
 
-        private void picClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        #endregion
 
     }
 }
